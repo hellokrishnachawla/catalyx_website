@@ -65,22 +65,23 @@ function LinkedInIcon() {
 }
 
 const SOCIAL_LINKS = [
-  { label: "Facebook", href: "https://www.facebook.com/profile.php?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=61591416034611&sk=about", icon: <FacebookIcon /> },
-  { label: "X (Twitter)", href: "https://x.com/catalyxtech", icon: <XIcon /> },
-  { label: "Instagram", href: "https://www.instagram.com/catalyx.tech?igsh=cXBseWFrdXBwbjYw&utm_source=qr", icon: <InstagramIcon /> },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/catalyxofficial/", icon: <LinkedInIcon /> },
+  { label: "Facebook", href: "#", icon: <FacebookIcon /> },
+  { label: "X (Twitter)", href: "#", icon: <XIcon /> },
+  { label: "Instagram", href: "#", icon: <InstagramIcon /> },
+  { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#eef2f8]" style={{marginTop : "120px"}}>
-      {/* Top section: logo left, columns right */}
+    <footer className="bg-[#eef2f8]" style={{ marginTop: "120px" }}>
+
+      {/* ── DESKTOP layout ─────────────────────────────────────── */}
       <div
-        className="flex flex-col md:flex-row items-start justify-between"
+        className="hidden md:flex items-start justify-between"
         style={{ paddingTop: "64px", paddingBottom: "56px", paddingLeft: "180px", paddingRight: "180px" }}
       >
-        {/* Brand — Footer-Logo.svg already includes the CX icon + "Catalyx" wordmark */}
-        <Link href="/" className="flex-shrink-0 mb-10 md:mb-0">
+        {/* Logo */}
+        <Link href="/" className="flex-shrink-0">
           <Image
             src="/Footer-Logo.svg"
             alt="Catalyx"
@@ -90,7 +91,7 @@ export default function Footer() {
           />
         </Link>
 
-        {/* Three nav columns grouped to the right */}
+        {/* Three nav columns */}
         <div className="flex gap-25">
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.heading} className="flex flex-col gap-5">
@@ -114,13 +115,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
-      <div style={{ marginLeft: "160px", marginRight: "160px" }}>
+      {/* Desktop divider */}
+      <div className="hidden md:block" style={{ marginLeft: "160px", marginRight: "160px" }}>
         <div className="border-t border-[#d1d5db]" />
       </div>
 
-      {/* Social icons — centered */}
-      <div className="flex justify-center gap-5" style={{ paddingTop: "28px", paddingBottom: "48px" }}>
+      {/* Desktop social icons */}
+      <div className="hidden md:flex justify-center gap-5" style={{ paddingTop: "28px", paddingBottom: "48px" }}>
         {SOCIAL_LINKS.map((s) => (
           <Link
             key={s.label}
@@ -131,6 +132,74 @@ export default function Footer() {
             <span style={{ transform: "scale(1.3)", display: "flex" }}>{s.icon}</span>
           </Link>
         ))}
+      </div>
+
+      {/* ── MOBILE layout ──────────────────────────────────────── */}
+      <div className="md:hidden flex flex-col" style={{ paddingTop: "48px", paddingBottom: "40px", paddingLeft: "40px", paddingRight: "40px" }}>
+
+        {/* Logo centered */}
+        <div className="flex justify-center" style={{ marginBottom: "40px" }}>
+          <Link href="/">
+            <Image
+              src="/Footer-Logo.svg"
+              alt="Catalyx"
+              width={80}
+              height={78}
+              style={{ width: "80px", height: "auto" }}
+            />
+          </Link>
+        </div>
+
+        {/* Product + Company in 2 columns */}
+        <div className="grid grid-cols-2" style={{ columnGap: "32px", marginBottom: "32px" }}>
+          {FOOTER_COLUMNS.slice(0, 2).map((col) => (
+            <div key={col.heading} className="flex flex-col" style={{ gap: "12px" }}>
+              <h4 style={{ fontSize: "17px", fontWeight: "700", color: "#111827" }}>{col.heading}</h4>
+              <ul className="flex flex-col" style={{ gap: "8px" }}>
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} style={{ fontSize: "15px", color: "#6b7280" }} className="hover:text-[#2563eb] transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Support — full width */}
+        <div className="flex flex-col" style={{ gap: "12px", marginBottom: "40px" }}>
+          <h4 style={{ fontSize: "17px", fontWeight: "700", color: "#111827" }}>{FOOTER_COLUMNS[2].heading}</h4>
+          <ul className="flex flex-col" style={{ gap: "8px" }}>
+            {FOOTER_COLUMNS[2].links.map((link) => (
+              <li key={link.label}>
+                <Link href={link.href} style={{ fontSize: "15px", color: "#6b7280" }} className="hover:text-[#2563eb] transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Divider */}
+        <div style={{ borderTop: "1px solid #d1d5db", marginBottom: "32px" }} />
+
+        {/* Social icons centered */}
+        <div className="flex justify-center" style={{ gap: "16px" }}>
+          {SOCIAL_LINKS.map((s) => (
+            <Link
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              className="flex items-center justify-center text-[#6b7280] hover:text-[#2563eb] hover:border-[#2563eb] transition-colors duration-150"
+              style={{ width: "44px", height: "44px", borderRadius: "8px", border: "1px solid #c9cdd4", backgroundColor: "white" }}
+            >
+              <span style={{ transform: "scale(1.3)", display: "flex" }}>{s.icon}</span>
+            </Link>
+          ))}
+        </div>
+
       </div>
     </footer>
   );

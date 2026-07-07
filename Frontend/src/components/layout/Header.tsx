@@ -19,15 +19,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-[#e5e7eb]">
-      {/*
-        Header inner: 40px left/right padding, logo on far left,
-        nav + button grouped on the right with equal spacing.
-      */}
+
+      {/* ── Desktop bar ─────────────────────────────────────────── */}
       <div
-        className="flex items-center justify-between h-[102px] w-full"
+        className="hidden md:flex items-center justify-between h-[102px] w-full"
         style={{ paddingLeft: "160px", paddingRight: "160px" }}
       >
-        {/* Logo — SVG contains the full "CX Catalyx" wordmark */}
+        {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logo.svg"
@@ -39,8 +37,8 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop: nav links + button on the right, all same gap */}
-        <div className="hidden md:flex items-center gap-15">
+        {/* Nav links + button */}
+        <div className="flex items-center gap-14">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -55,8 +53,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-
-          {/* Get started button */}
           <Link
             href="/contact"
             className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-semibold text-[17px] rounded-2xl transition-colors duration-200 whitespace-nowrap"
@@ -65,52 +61,80 @@ export default function Header() {
             Get started
           </Link>
         </div>
+      </div>
 
-        {/* Mobile hamburger */}
+      {/* ── Mobile bar ──────────────────────────────────────────── */}
+      <div className="md:hidden flex items-center justify-between h-[72px]" style={{ paddingLeft: "24px", paddingRight: "24px" }}>
+        {/* Logo — Footer-Logo.svg is the CX icon mark + Catalyx text stacked */}
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/Footer-Logo.svg"
+            alt="Catalyx"
+            width={48}
+            height={47}
+            priority
+            style={{ height: "47px", width: "auto" }}
+          />
+        </Link>
+
+        {/* Get started button — visible in mobile bar */}
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-semibold text-[15px] rounded-2xl transition-colors duration-200"
+          style={{ padding: "10px 22px", color: "#ffffff" }}
+        >
+          Get started
+        </Link>
+
+        {/* Hamburger / X toggle */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-[#f3f4f6] transition"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          className="flex flex-col items-center justify-center w-9 h-9 gap-[5px]"
         >
-          <span className={cn("block w-5 h-0.5 bg-[#374151] transition-transform duration-300", mobileOpen && "translate-y-2 rotate-45")} />
-          <span className={cn("block w-5 h-0.5 bg-[#374151] transition-opacity duration-300", mobileOpen && "opacity-0")} />
-          <span className={cn("block w-5 h-0.5 bg-[#374151] transition-transform duration-300", mobileOpen && "-translate-y-2 -rotate-45")} />
+          {mobileOpen ? (
+            /* X icon */
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111827" strokeWidth="2.5" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            /* 3-line hamburger */
+            <>
+              <span className="block w-6 h-[2px] bg-[#111827] rounded-full" />
+              <span className="block w-6 h-[2px] bg-[#111827] rounded-full" />
+              <span className="block w-6 h-[2px] bg-[#111827] rounded-full" />
+            </>
+          )}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* ── Mobile dropdown menu ────────────────────────────────── */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 bg-white border-t border-[#e5e7eb]",
-          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          "md:hidden overflow-hidden transition-all duration-300 bg-white",
+          mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <nav className="flex flex-col py-4 gap-1 px-5">
+        <nav className="flex flex-col items-center gap-0 pb-8 pt-4">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
+                "w-full text-center text-[22px] font-medium py-5 transition-colors",
                 pathname === link.href
-                  ? "text-[#2563eb] bg-[#eff6ff]"
-                  : "text-[#6b7280] hover:text-[#111827] hover:bg-[#f9fafb]"
+                  ? "text-[#2563eb]"
+                  : "text-[#111827] hover:text-[#2563eb]"
               )}
             >
               {link.label}
             </Link>
           ))}
-          <div className="pt-3 border-t border-[#e5e7eb] mt-2 px-3">
-            <Link
-              href="/contact"
-              className="flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium text-sm rounded-4xl transition-colors duration-200 w-full py-2.5"
-            >
-              Get started
-            </Link>
-          </div>
         </nav>
       </div>
+
     </header>
   );
 }
