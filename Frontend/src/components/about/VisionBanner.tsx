@@ -1,33 +1,115 @@
+import Image from "next/image";
+
 export default function VisionBanner() {
   return (
-    <section className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #1a3a8f 0%, #2563eb 100%)" }}>
-      {/* Dot grid overlay */}
+    <section
+      className="relative overflow-hidden"
+      style={{
+        background: "linear-gradient(to right, #4361EE 0%, #3F5BE1 76%, #14213D 100%)",
+        paddingTop: "72px",
+        paddingBottom: "72px",
+      }}
+    >
+      {/* Dot mesh — right 40%, inset top/bottom so it doesn't touch the edges */}
       <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)`,
-          backgroundSize: "24px 24px",
-        }}
-        aria-hidden="true"
-      />
+        className="absolute right-0"
+        style={{ width: "40%", top: "10px", bottom: "10px", zIndex: 0 }}
+      >
+        <Image
+          src="/vision-mesh.png"
+          alt=""
+          fill
+          className="object-cover object-left"
+          style={{ opacity: 0.6 }}
+          aria-hidden="true"
+        />
+        {/* Fade left edge of dots into the gradient */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, #3F5BE1 0%, transparent 40%)" }}
+        />
+      </div>
 
-      <div className="container relative z-10">
-        <div className="max-w-3xl fade-up">
-          {/* Tag */}
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-white border border-white/60 px-3 py-1 rounded-full w-fit mb-6">
-            OUR VISION
-          </span>
+      {/* ── DESKTOP content — 160px left gutter matching header logo ── */}
+      <div
+        className="relative hidden md:block"
+        style={{ paddingLeft: "160px", paddingRight: "80px", zIndex: 10 }}
+      >
+        <div style={{ maxWidth: "950px" }} className="fade-up">
+          <div style={{ marginBottom: "20px" }}>
+            <span
+              style={{
+                display: "inline-block",
+                fontSize: "18px",
+                fontWeight: "600",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: "#ffffff",
+                border: "1.5px solid rgba(255,255,255,0.7)",
+                borderRadius: "15px",
+                padding: "8px 50px",
+              }}
+            >
+              OUR VISION
+            </span>
+          </div>
 
-          {/* Vision statement */}
-          <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white leading-snug">
+          <p
+            style={{
+              fontSize: "clamp(26px, 3.5vw, 42px)",
+              fontWeight: "600",
+              color: "#ffffff",
+              lineHeight: "1.25",
+              marginBottom: "28px",
+            }}
+          >
             A future where every business can participate,{" "}
             compete and grow in the digital economy{" "}
             regardless of size, resources{" "}
             or technical expertise.
           </p>
 
-          {/* Blue underline accent */}
-          <div className="mt-6 w-10 h-0.5 bg-white rounded-full" />
+          <div style={{ width: "65px", height: "3px", backgroundColor: "#ffffff", borderRadius: "999px" }} />
+        </div>
+      </div>
+
+      {/* ── MOBILE content — 20px gutters, smaller font ── */}
+      <div
+        className="relative md:hidden"
+        style={{ paddingLeft: "20px", paddingRight: "20px", zIndex: 10 }}
+      >
+        <div className="fade-up">
+          <div style={{ marginBottom: "16px" }}>
+            <span
+              style={{
+                display: "inline-block",
+                fontSize: "11px",
+                fontWeight: "600",
+                letterSpacing: "0.13em",
+                textTransform: "uppercase",
+                color: "#ffffff",
+                border: "1.5px solid rgba(255,255,255,0.7)",
+                borderRadius: "999px",
+                padding: "6px 16px",
+              }}
+            >
+              OUR VISION
+            </span>
+          </div>
+
+          <p
+            style={{
+              fontSize: "22px",
+              fontWeight: "700",
+              color: "#ffffff",
+              lineHeight: "1.35",
+              marginBottom: "24px",
+            }}
+          >
+            A future where every business can participate, compete and grow in the digital economy regardless of size, resources or technical expertise.
+          </p>
+
+          <div style={{ width: "48px", height: "3px", backgroundColor: "#ffffff", borderRadius: "999px" }} />
         </div>
       </div>
     </section>

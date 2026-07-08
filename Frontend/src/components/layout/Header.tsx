@@ -44,7 +44,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[18px] font-normal transition-colors duration-150 relative pb-[3px] whitespace-nowrap",
+                "text-[20px] font-normal transition-colors duration-150 relative pb-[3px] whitespace-nowrap",
                 pathname === link.href
                   ? "text-[#111827] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#2563eb]"
                   : "text-[#4b5563] hover:text-[#111827]"
@@ -55,7 +55,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-semibold text-[17px] rounded-2xl transition-colors duration-200 whitespace-nowrap"
+            className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-semibold text-[19px] rounded-2xl transition-colors duration-200 whitespace-nowrap"
             style={{ padding: "12px 28px", color: "#ffffff" }}
           >
             Get started
