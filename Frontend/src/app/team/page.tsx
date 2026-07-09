@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 
+import TeamHero from "@/components/team/TeamHero";
+import TeamMembers from "@/components/team/TeamMembers";
+import "./team.css";
+
 export const metadata: Metadata = {
-  title: "Team | Catalyx",
+  title: "Team",
   description: "Meet the people building Catalyx.",
 };
 
 export default function TeamPage() {
   return (
-    <main>
-      {/* Team page — to be built by assigned developer */}
-      <section style={{ padding: "120px 24px", textAlign: "center" }}>
-        <h1>Team Page</h1>
-        <p>Coming soon — assigned to team member.</p>
-      </section>
-    </main>
+    <>
+      <TeamHero />
+      <TeamMembers />
+    </>
   );
 }

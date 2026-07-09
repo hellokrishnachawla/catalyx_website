@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 
+import ContactHero from "@/components/contact/ContactHero";
+import ContactSection from "@/components/contact/ContactSection";
+
 export const metadata: Metadata = {
-  title: "Contact | Catalyx",
-  description: "Get in touch with the Catalyx team.",
+  title: "Contact",
 };
 
 export default function ContactPage() {
   return (
-    <main>
-      {/* Contact page — to be built by assigned developer */}
-      <section style={{ padding: "120px 24px", textAlign: "center" }}>
-        <h1>Contact Page</h1>
-        <p>Coming soon — assigned to team member.</p>
-      </section>
+    <main className="py-16">
+      <ContactHero />
+      <ContactSection />
     </main>
   );
 }
