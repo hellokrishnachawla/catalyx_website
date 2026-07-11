@@ -62,11 +62,11 @@ export default function MeetTeamBanner() {
 
         {/* Content */}
         <div className="relative z-10" style={{ padding: "100px 56px" }}>
-          <div className="flex flex-col gap-7" style={{ maxWidth: "720px" }}>
-            <h2 style={{ fontSize: "45px", fontWeight: "600", color: "#ffffff", lineHeight: "1.25" }}>
+          <div className="flex flex-col gap-7" style={{ maxWidth: "650px" }}>
+            <h2 style={{ fontSize: "40px", fontWeight: "600", color: "#ffffff", lineHeight: "1.25" }}>
               Meet the people building Catalyx
             </h2>
-            <p style={{ fontSize: "22px", color: "#94a3b8", lineHeight: "1.7" }}>
+            <p style={{ fontSize: "20px", color: "#94a3b8", lineHeight: "1.7" }}>
               Bringing together technology, design and business expertise to simplify
               product digitization.
             </p>

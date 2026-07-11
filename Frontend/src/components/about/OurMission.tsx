@@ -14,9 +14,9 @@ export default function OurMission() {
           <div className="flex-shrink-0 flex items-center justify-center">
             <div
               className="rounded-full flex items-center justify-center"
-              style={{ width: "120px", height: "120px", backgroundColor: "#eff6ff" }}
+              style={{ width: "95px", height: "95px", backgroundColor: "#eff6ff" }}
             >
-              <div style={{ width: "100px", height: "100px", position: "relative" }}>
+              <div style={{ width: "75px", height: "75px", position: "relative" }}>
                 <Image src="/mission-icon.svg" alt="Mission icon" fill className="object-contain" />
               </div>
             </div>
@@ -29,20 +29,20 @@ export default function OurMission() {
               flexDirection: "column",
               gap: "20px",
               borderLeft: "5px solid #eff6ff",
-              paddingLeft: "40px",
+              paddingLeft: "60px",
             }}
           >
             <span
               style={{
                 display: "inline-block",
-                fontSize: "20px",
+                fontSize: "18px",
                 fontWeight: "600",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 color: "#2563eb",
                 border: "1.5px solid #2563eb",
                 borderRadius: "15px",
-                padding: "10px 50px",
+                padding: "8px 50px",
                 width: "fit-content",
               }}
             >
@@ -51,7 +51,7 @@ export default function OurMission() {
 
             <h2
               style={{
-                fontSize: "clamp(24px, 44px, 60px)",
+                fontSize: "clamp(24px, 40px, 60px)",
                 fontWeight: "600",
                 color: "#0f172a",
                 lineHeight: "1.25",
@@ -62,9 +62,9 @@ export default function OurMission() {
               Not every business has access to the tools needed to take that product to market.
             </h2>
 
-            <div style={{ width: "90px", height: "4px", backgroundColor: "#4361EE", borderRadius: "999px" }} />
+            <div style={{ width: "70px", height: "4px", backgroundColor: "#4361EE", borderRadius: "999px" }} />
 
-            <p style={{ fontSize: "24px", color: "#6b7280", lineHeight: "1.7", maxWidth: "900px" }}>
+            <p style={{ fontSize: "20px", color: "#6b7280", lineHeight: "1.7", maxWidth: "800px" }}>
               To make digital commerce accessible to every business with a product worth
               selling by simplifying product digitization, digital identity creation, distribution,
               and business intelligence.

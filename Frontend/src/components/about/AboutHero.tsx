@@ -95,7 +95,7 @@ export default function AboutHero() {
         >
           <h1
             style={{
-              fontSize: "62px",
+              fontSize: "42px",
               fontWeight: "600",
               color: "#111827",
               lineHeight: "1.2",
@@ -107,9 +107,9 @@ export default function AboutHero() {
 
           <p
             style={{
-              fontSize: "25px",
+              fontSize: "20px",
               color: "#6b7280",
-              lineHeight: "1.75",
+              lineHeight: "1.5",
             }}
           >
             Every successful digital business starts with a strong foundation.
@@ -121,10 +121,10 @@ export default function AboutHero() {
 
           <p
             style={{
-              fontSize: "25px",
+              fontSize: "20px",
               fontWeight: "700",
               color: "#6b7280",
-              lineHeight: "1.6",
+              lineHeight: "1.45",
             }}
           >
             Catalyx is building the infrastructure that enables businesses to
@@ -136,8 +136,8 @@ export default function AboutHero() {
         <div
           className="fade-up delay-200 flex-shrink-0"
           style={{
-            width: "800px",
-            height: "700px",
+            width: "619px",
+            height: "564px",
             borderRadius: "16px",
             overflow: "hidden",
             backgroundColor: "#1a3a8f",

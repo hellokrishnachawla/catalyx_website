@@ -42,20 +42,20 @@ export default function BeforeCommerce() {
       {/* ── Text block ── */}
       <div className="container">
         <div className="flex flex-col items-center text-center gap-8 mb-16 fade-up">
-          <h2 className="text-4xl sm:text-5xl font-semibold text-[#111827] leading-tight tracking-tight">
+          <h2 className="text-4xl sm:text-4xl font-semibold text-[#111827] leading-tight tracking-tight">
             Before Commerce Begins
           </h2>
-          <p className="text-lg sm:text-2xl text-[#6b7280] leading-relaxed max-w-4xl">
+          <p className="text-lg sm:text-xl text-[#6b7280] leading-relaxed max-w-4xl">
             Most digital platforms begin where selling starts. Catalyx begins much earlier.
           </p>
-          <p className="text-base sm:text-2xl text-[#6b7280] leading-relaxed max-w-8xl">
+          <p className="text-base sm:text-xl text-[#6b7280] leading-relaxed max-w-8xl">
             Before products can be marketed online, listed on marketplaces, showcased on
             websites, or shared across digital channels, businesses first need a strong
             digital foundation. They need structured product information, professional
             digital assets and connected workflows that enable products to be presented
             consistently and at scale.
           </p>
-          <p className="text-base sm:text-2xl text-[#6b7280] leading-relaxed max-w-8xl">
+          <p className="text-base sm:text-xl text-[#6b7280] leading-relaxed max-w-8xl">
             While many platforms help businesses sell online, Catalyx focuses on the stage
             before commerce – helping businesses transform products into commerce-ready
             digital assets and build the foundation required for long-term digital growth.
@@ -70,7 +70,7 @@ export default function BeforeCommerce() {
       ── */}
       <div
         className="fade-up delay-200 w-full hidden md:block"
-        style={{ paddingLeft: "160px", paddingRight: "160px", marginTop: "70px" }}
+        style={{ paddingLeft: "120px", paddingRight: "120px", marginTop: "70px" }}
       >
         <div
           className="bg-white rounded-2xl border border-[#e5e7eb]"
@@ -85,7 +85,7 @@ export default function BeforeCommerce() {
                   {/* Number badge */}
                   <div
                     className="rounded-full bg-[#2563eb] text-white font-bold flex items-center justify-center shadow-sm flex-shrink-0"
-                    style={{ width: "65px", height: "65px", fontSize: "18px" }}
+                    style={{ width: "50px", height: "50px", fontSize: "18px" }}
                   >
                     {step.number}
                   </div>
@@ -93,18 +93,18 @@ export default function BeforeCommerce() {
                   {/* Label */}
                   <span
                     className="font-bold text-[#111827] text-center"
-                    style={{ fontSize: "22px" }}
+                    style={{ fontSize: "20px" }}
                   >
                     {step.label}
                   </span>
 
                   {/* Blue underline */}
-                  <div className="w-14 rounded-full bg-[#2563eb]" style={{ height: "3px", marginTop: "-8px" }} />
+                  <div className="w-10 rounded-full bg-[#2563eb]" style={{ height: "3px", marginTop: "-8px" }} />
 
                   {/* Image — tall enough to match the reference */}
                   <div
                     className="relative w-full"
-                    style={{ height: "320px", marginTop: "8px" }}
+                    style={{ height: "270px" }}
                   >
                     <Image
                       src={step.image}
@@ -117,7 +117,7 @@ export default function BeforeCommerce() {
                   {/* Description */}
                   <p
                     className="text-[#6b7280] leading-relaxed text-center"
-                    style={{ fontSize: "20px", marginTop: "12px" }}
+                    style={{ fontSize: "16.5px", marginTop: "12px" }}
                   >
                     {step.description}
                   </p>
