@@ -23,28 +23,28 @@ export default function Header() {
       {/* ── Desktop bar ─────────────────────────────────────────── */}
       <div
         className="hidden md:flex items-center justify-between h-[102px] w-full"
-        style={{ paddingLeft: "160px", paddingRight: "160px" }}
+        style={{ paddingLeft: "120px", paddingRight: "120px" }}
       >
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logo.svg"
             alt="Catalyx"
-            width={180}
-            height={48}
+            width={165}
+            height={44}
             priority
-            style={{ height: "48px", width: "auto" }}
+            style={{ height: "45px", width: "auto" }}
           />
         </Link>
 
         {/* Nav links + button */}
-        <div className="flex items-center gap-14">
+        <div className="flex items-center gap-13">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[20px] font-normal transition-colors duration-150 relative pb-[3px] whitespace-nowrap",
+                "text-[17px] font-normal transition-colors duration-150 relative pb-[3px] whitespace-nowrap",
                 pathname === link.href
                   ? "text-[#111827] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#2563eb]"
                   : "text-[#4b5563] hover:text-[#111827]"
@@ -55,8 +55,8 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-semibold text-[19px] rounded-2xl transition-colors duration-200 whitespace-nowrap"
-            style={{ padding: "12px 28px", color: "#ffffff" }}
+            className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-medium text-[17px] rounded-xl transition-colors duration-200 whitespace-nowrap"
+            style={{ padding: "10px 22px", color: "#ffffff" }}
           >
             Get started
           </Link>
@@ -81,7 +81,7 @@ export default function Header() {
         <Link
           href="/contact"
           className="inline-flex items-center justify-center bg-[#2563eb] hover:bg-[#1d4ed8] font-semibold text-[15px] rounded-2xl transition-colors duration-200"
-          style={{ padding: "10px 22px", color: "#ffffff" }}
+          style={{ padding: "8px 18px", color: "#ffffff" }}
         >
           Get started
         </Link>

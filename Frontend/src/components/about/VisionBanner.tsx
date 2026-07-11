@@ -6,8 +6,8 @@ export default function VisionBanner() {
       className="relative overflow-hidden"
       style={{
         background: "linear-gradient(to right, #4361EE 0%, #3F5BE1 76%, #14213D 100%)",
-        paddingTop: "72px",
-        paddingBottom: "72px",
+        paddingTop: "55px",
+        paddingBottom: "55px",
       }}
     >
       {/* Dot mesh — right 40%, inset top/bottom so it doesn't touch the edges */}
@@ -35,12 +35,12 @@ export default function VisionBanner() {
         className="relative hidden md:block"
         style={{ paddingLeft: "160px", paddingRight: "80px", zIndex: 10 }}
       >
-        <div style={{ maxWidth: "950px" }} className="fade-up">
+        <div style={{ maxWidth: "840px" }} className="fade-up">
           <div style={{ marginBottom: "20px" }}>
             <span
               style={{
                 display: "inline-block",
-                fontSize: "18px",
+                fontSize: "17px",
                 fontWeight: "600",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
@@ -56,7 +56,7 @@ export default function VisionBanner() {
 
           <p
             style={{
-              fontSize: "clamp(26px, 3.5vw, 42px)",
+              fontSize: "clamp(26px, 2.4vw, 42px)",
               fontWeight: "600",
               color: "#ffffff",
               lineHeight: "1.25",
@@ -69,7 +69,7 @@ export default function VisionBanner() {
             or technical expertise.
           </p>
 
-          <div style={{ width: "65px", height: "3px", backgroundColor: "#ffffff", borderRadius: "999px" }} />
+          <div style={{ width: "63px", height: "4px", backgroundColor: "#ffffff", borderRadius: "999px" }} />
         </div>
       </div>
 
