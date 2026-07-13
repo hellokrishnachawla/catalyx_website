@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description:
     "Catalyx builds the digital foundation for product-based businesses to automate catalogue management and scale commerce across all channels.",
   keywords: ["catalyx", "ecommerce", "catalogue", "product digitisation", "digital commerce"],
+  icons: {
+    icon: "/Main_Logo.svg",
+    shortcut: "/Main_Logo.svg",
+    apple: "/Main_Logo.svg",
+  },
   openGraph: {
     title: "Catalyx — Automate Catalogue. Scale Commerce.",
     description:
