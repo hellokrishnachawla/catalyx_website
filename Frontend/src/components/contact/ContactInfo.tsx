@@ -2,9 +2,9 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactInfo() {
   return (
-    <div className="relative flex h-[480px] w-[320px] flex-col overflow-hidden rounded-[24px] bg-gradient-to-br from-[#2F5EF7] to-[#2755DA] px-15 py-12 text-white">
+    <div className="relative mx-auto flex min-h-[420px] w-full max-w-[420px] flex-col overflow-hidden rounded-[24px] bg-gradient-to-br from-[#2F5EF7] to-[#2755DA] px-8 py-10 text-white sm:px-10 sm:py-12">
 
-      <h2 className="max-w-[240px] text-[34px] font-bold leading-tight">
+      <h2 className="max-w-[240px] text-[30px] font-bold leading-tight sm:text-[34px]">
         Have a question or want to learn more?
       </h2>
 

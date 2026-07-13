@@ -6,3 +6,6 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+.team-slide {
+  flex: 0 0 auto;
+}

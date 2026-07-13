@@ -8,30 +8,35 @@ export default function TeamHero() {
         justify-center
         text-center
         px-6
-        pt-24
-        pb-20
+        pt-20
+        pb-14
+        md:pt-24
+        md:pb-20
       "
     >
       <h1
         className="
-          text-5xl
+          text-4xl
+          md:text-5xl
           font-bold
           text-[#111827]
         "
       >
-        Meet the Team
+        Meet the team
       </h1>
 
       <p
         className="
-          mt-6
+          mt-5
           max-w-3xl
-          text-lg
+          text-base
+          md:text-lg
+          leading-7
+          md:leading-8
           text-[#6B7280]
-          leading-8
         "
       >
-        The people behind the ideas, technology and vision that are
+        The people behind the ideas, technology, and vision that are
         building Catalyx.
       </p>
     </section>
