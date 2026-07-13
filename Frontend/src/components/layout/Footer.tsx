@@ -65,10 +65,10 @@ function LinkedInIcon() {
 }
 
 const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#", icon: <FacebookIcon /> },
-  { label: "X (Twitter)", href: "#", icon: <XIcon /> },
-  { label: "Instagram", href: "#", icon: <InstagramIcon /> },
-  { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=61591416034611&sk=about", icon: <FacebookIcon /> },
+  { label: "X (Twitter)", href: "https://x.com/catalyxtech", icon: <XIcon /> },
+  { label: "Instagram", href: "https://www.instagram.com/catalyx.tech?igsh=cXBseWFrdXBwbjYw&utm_source=qr", icon: <InstagramIcon /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/catalyxofficial/", icon: <LinkedInIcon /> },
 ];
 
 export default function Footer() {
