@@ -19,9 +19,15 @@ export const metadata: Metadata = {
     "Catalyx builds the digital foundation for product-based businesses to automate catalogue management and scale commerce across all channels.",
   keywords: ["catalyx", "ecommerce", "catalogue", "product digitisation", "digital commerce"],
   icons: {
-    icon: "/Main_Logo.svg",
-    shortcut: "/Main_Logo.svg",
-    apple: "/Main_Logo.svg",
+    icon: [
+      { url: "/favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon_io/favicon.ico",
+    apple: "/favicon_io/apple-touch-icon.png",
+    other: [
+      { rel: "manifest", url: "/favicon_io/site.webmanifest" },
+    ],
   },
   openGraph: {
     title: "Catalyx — Automate Catalogue. Scale Commerce.",
