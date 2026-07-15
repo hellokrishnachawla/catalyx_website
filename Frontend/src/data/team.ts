@@ -36,7 +36,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 5,
     name: "Mr. Neeraj",
-    role: "Technical Associate",
+    role: "Software Developer",
     image: "/team/member4.png",
     linkedin: "https://www.linkedin.com/in/neeraj-apraj-b84237285",
     isFounder: false,
@@ -52,7 +52,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 7,
     name: "Mr. Sahil",
-    role: "Developer",
+    role: "Software Developer",
     image: "/team/member6.png",
     linkedin: "https://www.linkedin.com/in/mo-sahil-khan",
     isFounder: false,
@@ -68,7 +68,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 9,
     name: "Ms. Deepasree",
-    role: "HR & Marketing Associate",
+    role: "HR & Marketing ",
     image: "/team/member8.png",
     linkedin: "https://www.linkedin.com/in/deepasree-chatterjee-094817241",
     isFounder: false,

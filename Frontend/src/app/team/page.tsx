@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <>
-      <TeamHero />
-      <TeamMembers />
-    </>
+<main className="flex min-h-[calc(100vh-102px)] flex-col">      <TeamHero />
+
+<div className="flex-1 flex">        <TeamMembers />
+      </div>
+    </main>
   );
 }
