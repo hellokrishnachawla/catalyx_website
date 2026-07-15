@@ -73,8 +73,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#eef2f8]" style={{ marginTop: "120px" }}>
-
+    <footer className="mt-10 bg-[#eef2f8] md:mt-12">
       {/* ── DESKTOP layout ─────────────────────────────────────── */}
       <div
         className="hidden md:flex items-start justify-between"
@@ -121,7 +120,7 @@ export default function Footer() {
       </div>
 
       {/* Desktop social icons */}
-      <div className="hidden md:flex justify-center gap-5" style={{ paddingTop: "28px", paddingBottom: "48px" }}>
+      <div className="hidden md:flex justify-center gap-5" style={{ paddingTop: "28px", paddingBottom: "40px" }}>
         {SOCIAL_LINKS.map((s) => (
           <Link
             key={s.label}

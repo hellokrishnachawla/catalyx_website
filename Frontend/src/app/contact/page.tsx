@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="flex-1 py-16 flex justify-center">
-      <div className="w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
+    <main className="flex flex-1 justify-center px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-8">
+      <div className="w-full max-w-[1020px]">
         <ContactHero />
         <ContactSection />
       </div>

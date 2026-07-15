@@ -3,14 +3,14 @@ import ContactForm from "./ContactForm";
 
 export default function ContactSection() {
   return (
-    <section className="w-full px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-[1180px] rounded-[26px] bg-white p-6 shadow-[0_15px_60px_rgba(0,0,0,0.08)] sm:p-10">
-        <div className="mx-auto flex w-full max-w-[1020px] flex-col gap-8 lg:flex-row lg:items-start lg:justify-center">
-          <div className="mx-auto w-full lg:mx-0 lg:w-[360px]">
+    <section className="w-full px-2 py-2 sm:px-4 lg:px-6">
+      <div className="mx-auto w-full max-w-[1120px] rounded-[24px] bg-white px-6 py-6 shadow-[0_12px_35px_rgba(15,23,42,0.08)] sm:px-8 sm:py-8 lg:px-8 lg:py-8">
+        <div className="flex flex-col items-stretch gap-[32px] lg:flex-row">
+          <div className="w-full lg:w-[430px]">
             <ContactInfo />
           </div>
 
-          <div className="mx-auto w-full lg:mx-0 lg:w-[640px]">
+          <div className="w-full lg:flex-1 lg:max-w-[620px]">
             <ContactForm />
           </div>
         </div>

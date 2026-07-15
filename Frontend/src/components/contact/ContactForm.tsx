@@ -7,6 +7,7 @@ export default function ContactForm() {
     firstName: "",
     lastName: "",
     email: "",
+    countryCode: "+91",
     phone: "",
     reason: "General Inquiry",
     message: "",
@@ -16,7 +17,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -38,7 +39,10 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          phone: `${formData.countryCode} ${formData.phone}`,
+        }),
       });
 
       const result = await response.json();
@@ -53,6 +57,7 @@ export default function ContactForm() {
         firstName: "",
         lastName: "",
         email: "",
+        countryCode: "+91",
         phone: "",
         reason: "General Inquiry",
         message: "",
@@ -67,14 +72,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-[640px] flex-col"
-    >
-      <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
-
+    <form onSubmit={handleSubmit} className="mx-auto flex w-full max-w-full flex-col">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-7 md:grid-cols-2">
         <div>
-          <label className="text-sm text-gray-500">
+          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
             First Name
           </label>
 
@@ -84,12 +85,12 @@ export default function ContactForm() {
             required
             value={formData.firstName}
             onChange={handleChange}
-            className="mt-2 w-full border-b border-gray-300 pb-2 outline-none focus:border-[#2F5EF7]"
+            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
           />
         </div>
 
         <div>
-          <label className="text-sm text-gray-500">
+          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
             Last Name
           </label>
 
@@ -99,12 +100,12 @@ export default function ContactForm() {
             required
             value={formData.lastName}
             onChange={handleChange}
-            className="mt-2 w-full border-b border-gray-300 pb-2 outline-none focus:border-[#2F5EF7]"
+            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
           />
         </div>
 
         <div>
-          <label className="text-sm text-gray-500">
+          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
             Email
           </label>
 
@@ -114,34 +115,45 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="mt-2 w-full border-b border-gray-300 pb-2 outline-none focus:border-[#2F5EF7]"
+            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
           />
         </div>
 
         <div>
-          <label className="text-sm text-gray-500">
+          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
             Phone Number
           </label>
 
-          <input
-            type="text"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="mt-2 w-full border-b border-gray-300 pb-2 outline-none focus:border-[#2F5EF7]"
-          />
+          <div className="mt-1 flex h-10 items-center border-b border-[#D9D9D9] pb-1">
+            <select
+              name="countryCode"
+              value={formData.countryCode}
+              onChange={handleChange}
+              className="h-full w-[84px] appearance-none bg-transparent pr-2 text-sm leading-6 tracking-normal text-slate-700 outline-none focus:outline-none"
+            >
+              <option value="+91">+91</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <option value="+61">+61</option>
+            </select>
+            <div className="h-6 w-px bg-slate-300" />
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="h-full flex-1 bg-transparent px-3 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400"
+            />
+          </div>
         </div>
-
       </div>
 
-      <div className="mt-10">
-
-        <label className="text-sm text-gray-500">
+      <div className="mt-8">
+        <label className="text-[14px] font-medium leading-5 tracking-normal text-slate-600">
           Reason For Enquiry
         </label>
 
-        <div className="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-
+        <div className="mt-4 flex flex-wrap items-center gap-6 text-[14px] sm:gap-8">
           {[
             "General Inquiry",
             "Partnership",
@@ -150,58 +162,55 @@ export default function ContactForm() {
           ].map((reason) => (
             <label
               key={reason}
-              className="flex items-center gap-2"
+              className="flex items-center gap-3 text-sm leading-6 tracking-normal text-slate-700"
             >
-              <input
-                type="radio"
-                name="reason"
-                value={reason}
-                checked={formData.reason === reason}
-                onChange={handleChange}
-              />
+              <span className="relative flex h-5 w-5 items-center justify-center rounded-full border border-[#D9D9D9] bg-white">
+                <input
+                  type="radio"
+                  name="reason"
+                  value={reason}
+                  checked={formData.reason === reason}
+                  onChange={handleChange}
+                  className="peer absolute inset-0 h-full w-full cursor-pointer appearance-none opacity-0"
+                />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#2F5EF7] opacity-0 transition peer-checked:opacity-100" />
+              </span>
               {reason}
             </label>
           ))}
-
         </div>
-
       </div>
 
       <div className="mt-8">
-
-        <label className="text-sm text-gray-500">
+        <label className="text-[14px] font-medium leading-5 tracking-normal text-slate-600">
           Message
         </label>
 
         <textarea
-          rows={6}
+          rows={4}
           name="message"
           required
           value={formData.message}
           onChange={handleChange}
-          className="mt-2 w-full resize-none border-b border-gray-300 outline-none focus:border-[#2F5EF7]"
+          className="mt-1 h-[100px] w-full resize-none border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
         />
-
       </div>
 
       {status && (
-        <p className="mt-6 text-sm font-medium">
+        <p className="mt-4 text-[14px] font-normal leading-6 tracking-normal text-slate-700">
           {status}
         </p>
       )}
 
       <div className="mt-8 flex justify-end">
-
         <button
           type="submit"
           disabled={loading}
-          className="rounded-xl bg-[#1A2340] px-8 py-3 text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex h-12 w-full items-center justify-center rounded-2xl bg-[#0f172a] px-4 text-sm font-semibold tracking-wide text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition hover:bg-[#111827] disabled:cursor-not-allowed disabled:opacity-60 sm:w-[190px]"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
-
       </div>
-
     </form>
   );
 }
