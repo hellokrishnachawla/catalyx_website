@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ export default function ContactForm() {
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
+  const msgRef = useRef<HTMLTextAreaElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -75,7 +76,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="mx-auto flex w-full max-w-full flex-col">
       <div className="grid grid-cols-1 gap-x-8 gap-y-7 md:grid-cols-2">
         <div>
-          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
+          <label className="block text-[16px] font-normal leading-5 tracking-normal text-slate-600">
             First Name
           </label>
 
@@ -85,12 +86,12 @@ export default function ContactForm() {
             required
             value={formData.firstName}
             onChange={handleChange}
-            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
+            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-base leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
           />
         </div>
 
         <div>
-          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
+          <label className="block text-[16px] font-normal leading-5 tracking-normal text-slate-600">
             Last Name
           </label>
 
@@ -100,12 +101,12 @@ export default function ContactForm() {
             required
             value={formData.lastName}
             onChange={handleChange}
-            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
+            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-base leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
           />
         </div>
 
         <div>
-          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
+          <label className="block text-[16px] font-normal leading-5 tracking-normal text-slate-600">
             Email
           </label>
 
@@ -115,45 +116,57 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
+            className="mt-1 h-10 w-full border-b border-[#D9D9D9] bg-transparent pb-2 text-base leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
           />
         </div>
 
         <div>
-          <label className="block text-[14px] font-medium leading-5 tracking-normal text-slate-600">
+          <label className="block text-[16px] font-normal leading-5 tracking-normal text-slate-600">
             Phone Number
           </label>
 
           <div className="mt-1 flex h-10 items-center border-b border-[#D9D9D9] pb-1">
-            <select
-              name="countryCode"
-              value={formData.countryCode}
-              onChange={handleChange}
-              className="h-full w-[84px] appearance-none bg-transparent pr-2 text-sm leading-6 tracking-normal text-slate-700 outline-none focus:outline-none"
-            >
-              <option value="+91">+91</option>
-              <option value="+1">+1</option>
-              <option value="+44">+44</option>
-              <option value="+61">+61</option>
-            </select>
-            <div className="h-6 w-px bg-slate-300" />
+            <div className="relative flex h-full items-center">
+              <select
+                name="countryCode"
+                value={formData.countryCode}
+                onChange={handleChange}
+                className="h-full appearance-none bg-transparent pr-4 text-base leading-6 tracking-normal text-slate-700 outline-none focus:outline-none"
+                style={{ width: "55px", minWidth: "36px"}}
+              >
+                <option value="+91">+91</option>
+                <option value="+1">+1</option>
+                <option value="+44">+44</option>
+                <option value="+61">+61</option>
+              </select>
+              {/* Custom dropdown chevron */}
+              <svg
+                className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2"
+                width="12" height="12" viewBox="0 0 12 12" fill="none"
+                style={{marginRight : "10px"}}
+              >
+                <path d="M2 4L6 8L10 4" stroke="#64748b" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div className="mx-[10px] h-6 w-px bg-slate-300" />
             <input
+            style={{marginLeft : "6px"}}
               type="text"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="h-full flex-1 bg-transparent px-3 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400"
+              className="h-full flex-1 bg-transparent px-3 text-base leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400"
             />
           </div>
         </div>
       </div>
 
-      <div className="mt-8">
-        <label className="text-[14px] font-medium leading-5 tracking-normal text-slate-600">
+      <div style={{marginTop : "40px"}} className="mt-20">
+        <label className="text-[18px] font-normal leading-5 tracking-normal text-slate-600">
           Reason For Enquiry
         </label>
 
-        <div className="mt-4 flex flex-wrap items-center gap-6 text-[14px] sm:gap-8">
+        <div style={{marginTop : "15px", fontSize : "25px"}} className="flex flex-wrap items-center gap-6 sm:gap-8">
           {[
             "General Inquiry",
             "Partnership",
@@ -162,7 +175,7 @@ export default function ContactForm() {
           ].map((reason) => (
             <label
               key={reason}
-              className="flex items-center gap-3 text-sm leading-6 tracking-normal text-slate-700"
+              className="flex items-center gap-3 text-base leading-6 tracking-normal text-slate-700"
             >
               <span className="relative flex h-5 w-5 items-center justify-center rounded-full border border-[#D9D9D9] bg-white">
                 <input
@@ -181,18 +194,25 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="mt-8">
-        <label className="text-[14px] font-medium leading-5 tracking-normal text-slate-600">
+      <div style={{marginTop : "40px"}} className="mt-8">
+        <label className="text-[16px] font-medium leading-5 tracking-normal text-slate-600">
           Message
         </label>
 
         <textarea
-          rows={4}
+          ref={msgRef}
           name="message"
           required
+          rows={1}
           value={formData.message}
-          onChange={handleChange}
-          className="mt-1 h-[100px] w-full resize-none border-b border-[#D9D9D9] bg-transparent pb-2 text-sm leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
+          onChange={(e) => {
+            handleChange(e);
+            // auto-grow: reset height first so shrink works too
+            e.target.style.height = "auto";
+            e.target.style.height = `${e.target.scrollHeight}px`;
+          }}
+          className="mt-1 w-full resize-none overflow-hidden border-b border-[#D9D9D9] bg-transparent pb-2 text-base leading-6 tracking-normal text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-[#2F5EF7]"
+          style={{ minHeight: "36px", height: "36px" }}
         />
       </div>
 
@@ -202,11 +222,11 @@ export default function ContactForm() {
         </p>
       )}
 
-      <div className="mt-8 flex justify-end">
+      <div style={{marginTop : "40px"}} className="mt-8 flex justify-end">
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex h-12 w-full items-center justify-center rounded-2xl bg-[#0f172a] px-4 text-sm font-semibold tracking-wide text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition hover:bg-[#111827] disabled:cursor-not-allowed disabled:opacity-60 sm:w-[190px]"
+          className="cursor-pointer inline-flex h-12 w-full items-center justify-center rounded-2xl bg-[#14213D] px-4 text-sm font-semibold tracking-wide text-white shadow-[0_10px_24px_rgba(15,23,42,0.16)] transition hover:bg-[#111827] disabled:cursor-not-allowed disabled:opacity-60 sm:w-[190px]"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
