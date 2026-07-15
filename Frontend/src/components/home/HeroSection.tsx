@@ -15,21 +15,23 @@ export default function HeroSection() {
           <div>
             <h1
               style={{
-                fontSize: "clamp(40px, 3.6vw, 72px)",
+                fontSize: "clamp(32px, 3.5vw, 72px)",
                 fontWeight: "700",
                 color: "#0f172a",
                 lineHeight: "1.1",
                 marginBottom: "8px",
+                whiteSpace: "nowrap",
               }}
             >
               Automate Catalogue.
             </h1>
             <h1
               style={{
-                fontSize: "clamp(40px, 3.6vw, 72px)",
+                fontSize: "clamp(32px, 3.5vw, 72px)",
                 fontWeight: "700",
                 color: "#2563eb",
                 lineHeight: "1.1",
+                whiteSpace: "nowrap",
               }}
             >
               Scale Commerce.
