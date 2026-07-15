@@ -2,36 +2,50 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactInfo() {
   return (
-    <div className="relative mx-auto flex h-full min-h-[430px] w-full flex-col overflow-hidden rounded-[20px] bg-gradient-to-br from-[#2F5EF7] to-[#2755DA] px-9 py-9 text-white sm:px-10 sm:py-10">
+    <div
+      style={{
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        height: "96%",
+        minHeight: "320px",
+        background: "linear-gradient(135deg, #3b5bdb 0%, #2755DA 100%)",
+        borderRadius: "15px",
+        padding: "40px 36px",
+        color: "#ffffff",
+        overflow: "hidden",
+        margin: "10px"
+      }}
+    >
+      {/* Heading */}
       <div>
-        <h2 className="max-w-[300px] text-[22px] font-semibold leading-[1.3] tracking-[-0.02em]">
+        <h2 style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1.35, letterSpacing: "-0.02em", maxWidth: "480px"}}>
           Have a question or want to learn more?
         </h2>
-
-        <p className="mt-2 max-w-[300px] text-[15px] leading-7 text-blue-100">
+        <p style={{ fontSize: "24px", lineHeight: 1.6, fontWeight: 500 }}>
           Get in touch with our team.
         </p>
       </div>
 
-      <div className="mt-10 space-y-5 text-[15px]">
-        <div className="flex items-center gap-4">
-          <Phone size={18} />
+      {/* Contact details */}
+      <div style={{ marginTop: "50px", display: "flex", flexDirection: "column", gap: "30px", fontSize: "20px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <Phone size={20} />
           <span>+91-9654307204</span>
         </div>
-
-        <div className="flex items-center gap-4">
-          <Mail size={18} />
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <Mail size={20} />
           <span>info@officialcatalyx.tech</span>
         </div>
-
-        <div className="flex items-center gap-4">
-          <MapPin size={18} />
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <MapPin size={20} />
           <span>Delhi, India</span>
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 h-36 w-36 rounded-full bg-white/10" />
-      <div className="absolute bottom-8 right-20 h-24 w-24 rounded-full bg-white/10" />
+      {/* Decorative circles */}
+      <div style={{ position: "absolute", bottom: "-20px", right: "-20px", width: "160px", height: "160px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.08)" }} />
+      <div style={{ position: "absolute", bottom: "40px", right: "60px", width: "100px", height: "100px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.08)" }} />
     </div>
   );
 }

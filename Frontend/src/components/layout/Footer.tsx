@@ -73,7 +73,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="mt-10 bg-[#eef2f8] md:mt-12">
+    <footer style={{marginTop : "60px"}} className="mt-20 bg-[#eef2f8] md:mt-12">
       {/* ── DESKTOP layout ─────────────────────────────────────── */}
       <div
         className="hidden md:flex items-start justify-between"
