@@ -78,10 +78,10 @@ export default function AboutHero() {
         className="hidden lg:flex flex-row items-center"
         style={{
           gap: "48px",
-          paddingTop: "60px",
+          paddingTop: "40px",
           paddingBottom: "60px",
-          paddingLeft: "160px",
-          paddingRight: "160px",
+          paddingLeft: "120px",
+          paddingRight: "180px",
         }}
       >
         {/* Left */}
@@ -136,8 +136,8 @@ export default function AboutHero() {
         <div
           className="fade-up delay-200 flex-shrink-0"
           style={{
-            width: "619px",
-            height: "564px",
+            width: "min(619px, 48%)",
+            aspectRatio: "619/564",
             borderRadius: "16px",
             overflow: "hidden",
             backgroundColor: "#1a3a8f",
