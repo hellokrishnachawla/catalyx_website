@@ -73,4 +73,62 @@ export const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/deepasree-chatterjee-094817241",
     isFounder: false,
   },
+
+  {
+    id: 10,
+    name: "Ms. Varsha",
+    role: "HR ",
+    image: "/team/member9.png",
+    linkedin: "https://www.linkedin.com/in/varsha-gupta-810ba9252?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    isFounder: false,
+  },
+  
+  {
+    id: 11,
+    name: "Ms. Akansha",
+    role: "Marketing and Branding ",
+    image: "/team/member10.png",
+    linkedin: "https://www.linkedin.com/in/akansha-srivastava-1218bb1b8/ ",
+    isFounder: false,
+  },
+
+  {
+    id: 12,
+    name: "Ms. Disha",
+    role: "Marketing and Branding ",
+    image: "/team/member11.png",
+    linkedin: "https://www.linkedin.com/in/disha-maheshwari-9b3690312 ",
+    isFounder: false,
+  },
+
+
+  {
+    id: 13,
+    name: "Ms. Swati",
+    role: "Tech",
+    image: "/team/member12.png",
+    linkedin: "https://www.linkedin.com/in/swati-samantaray-a0943633b",
+    isFounder: false,
+  },
+
+
+  {
+    id: 14,
+    name: "Mr. Uday",
+    role: "Finance ",
+    image: "/team/member13.png",
+    linkedin: "https://www.linkedin.com/in/uday-j-801082303/ ",
+    isFounder: false,
+  },
+
+
+  {
+    id: 15,
+    name: "Mr. Ayush",
+    role: "Project Lead",
+    image: "/team/member14.png",
+    linkedin: "https://www.linkedin.com/in/ayush-agicha-2419322a7?utm_source=share_via&utm_content=profile&utm_medium=member_ios ",
+    isFounder: false,
+  },
+
 ];
