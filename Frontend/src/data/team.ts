@@ -78,22 +78,14 @@ export const teamMembers: TeamMember[] = [
     id: 10,
     name: "Ms. Varsha",
     role: "HR ",
-    image: "/team/member9.png",
+    image: "/team/member15.png",
     linkedin: "https://www.linkedin.com/in/varsha-gupta-810ba9252?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     isFounder: false,
   },
   
-  {
-    id: 11,
-    name: "Ms. Akansha",
-    role: "Marketing and Branding ",
-    image: "/team/member10.png",
-    linkedin: "https://www.linkedin.com/in/akansha-srivastava-1218bb1b8/ ",
-    isFounder: false,
-  },
 
   {
-    id: 12,
+    id: 11,
     name: "Ms. Disha",
     role: "Marketing and Branding ",
     image: "/team/member11.png",
@@ -103,7 +95,7 @@ export const teamMembers: TeamMember[] = [
 
 
   {
-    id: 13,
+    id: 12,
     name: "Ms. Swati",
     role: "Tech",
     image: "/team/member12.png",
@@ -113,7 +105,7 @@ export const teamMembers: TeamMember[] = [
 
 
   {
-    id: 14,
+    id: 13,
     name: "Mr. Uday",
     role: "Finance ",
     image: "/team/member13.png",
@@ -123,10 +115,10 @@ export const teamMembers: TeamMember[] = [
 
 
   {
-    id: 15,
+    id: 14,
     name: "Mr. Ayush",
     role: "Project Lead",
-    image: "/team/member14.png",
+    image: "/team/member16.png",
     linkedin: "https://www.linkedin.com/in/ayush-agicha-2419322a7?utm_source=share_via&utm_content=profile&utm_medium=member_ios ",
     isFounder: false,
   },
