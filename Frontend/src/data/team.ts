@@ -8,7 +8,7 @@ export const teamMembers: TeamMember[] = [
     image: "/team/founder.png",
     linkedin: "https://drive.google.com/file/d/1bJ6nOBVbFbkaXz63DEoqKUYAa08hQ484/view?usp=drivesdk",
     isFounder: true,
-  },
+  }, 
   {
     id: 2,
     name: "Ms. Samiksha",
@@ -65,25 +65,7 @@ export const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/mahima-singh-9770a13b8",
     isFounder: false,
   },
-  {
-    id: 9,
-    name: "Ms. Deepasree",
-    role: "HR & Marketing ",
-    image: "/team/member8.png",
-    linkedin: "https://www.linkedin.com/in/deepasree-chatterjee-094817241",
-    isFounder: false,
-  },
-
-  {
-    id: 10,
-    name: "Ms. Varsha",
-    role: "HR ",
-    image: "/team/member15.png",
-    linkedin: "https://www.linkedin.com/in/varsha-gupta-810ba9252?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    isFounder: false,
-  },
   
-
   {
     id: 11,
     name: "Ms. Disha",
